@@ -43,14 +43,14 @@
 > Bringen Sie das „Hallo Welt“-Programm aus der Vorlesung auf Ihrer bevorzugten Plattform zum Laufen. 
 > Skizzieren Sie dabei den Ablauf und vergleichen Sie mit den Schritten, die in der Vorlesung durchgeführt wurden.
 
-Code: [aufgabe1-4.c](aufgabe1-4.c)
+Code: [aufgabe1-4.c](part1/aufgabe4.c)
 
 # Übung 2
 
 ## Aufgabe 1
 > Schreiben Sie ein Programm, das Ihren Vor- und Nachnamen sowie Ihr Alter ausgibt.
 
-Code: [aufgabe2-1](aufgabe2-1.c)
+Code: [aufgabe2-1](part2/aufgabe1.c)
 
 ## Aufgabe 2
 > Was passiert mit dem „Hallo Welt“-Programm, 
@@ -152,7 +152,7 @@ auf der *rechten* "Seite". Das ist in der C syntax so festgeschrieben.
 > 3. zwischen "Hallo" und "Welt" ein Tab Abstand existiert
 > 4. verschiedene fest vorgegebene Zeilen ausgeben kann
 
-Code: [aufgabe2-10.c](aufgabe2-10.c)
+Code: [aufgabe2-10.c](part2/aufgabe10.c)
 
 > Was müssten Sie tun, dass das Programm eine Zeile, die der Aufrufer
 > eingibt, auch wieder zurückgeben.
@@ -207,3 +207,304 @@ um mehr Zeichen definieren zu können.
 
 # Übung 3
 
+## Aufgabe 1
+> Andern Sie das Ausgangsprogramm so ab, 
+> dass es auch `int` und `float` sowie
+> einzelne `char` ausgeben kann. 
+> Was müssen Sie dafür tun?
+
+[//]: # (ToDo: welches Ausgangsprogramm?)
+
+## Aufgabe 2
+> Bringen Sie das folgende Programm zum Laufen:
+> 
+> ```c++
+> #include <stdio.h>
+> 
+> int main() {
+>   int a, b;
+>   double d;
+>   char ch;
+> 
+>   i = 4;
+>   a = 5.;
+>   b = 3;
+>   d = 4.5;
+>   ch = "A";
+> 
+>   printf("%d\n", a);
+>   printf("%f\n", b);
+>   printf("%5.2f\n", d);
+>   printf("%c\n, ch);
+> 
+>   return(0);
+> }
+> ```
+
+Code: [aufgabe3-2.c](part3/aufgabe2.c)
+
+> Welche Bedeutung hat die Format-Anweisung "5.2f"? 
+> Recherchieren Sie. Gibt es weitere Format-Anweisungen?
+
+Die Zahl links von dem Punkt sagt wie lang der text mindestens sein soll.
+Es werden leerzeichen hinzugefügt, falls der original input zu klein ist,
+um die mindestgröße zu erreichen. 
+
+Die Zahl rechts vom Punkt gibt an wie viele Nachkommastellen gezeigt werden sollen.
+
+Es gibt weitere Format-Anweisungen, wie z.B. kann man `-` nach dem `%`-Zeichen 
+benutzen, um anzugeben, dass der Text 'left aligned' sein soll.
+
+## Aufgabe 3
+> Wie hängen die Begriffe **Anweisung** und 
+> **Ausdruck** mit den Begriffen **r-value** 
+> und **l-value** zusammen?
+
+- **l-value:** Speicheradresse, steht auf der linken Seite einer Zuweisung
+- **r-value:** tatsächlicher Wert, steht auf der rechten Seite einer Zuweisung
+
+## Aufgabe 4
+> Schreiben Sie ein Programm, das zwei 
+> Integer-Zahlen einliest und sowohl die 
+> Summe als auch das Produkt ausgibt. 
+> Das Gleiche soll auch für float-Zahlen gebaut werden.
+
+Code: [aufgabe3-4.c](part3/aufgabe4.c)
+
+## Aufgabe 5
+> Schreiben Sie ein Programm, dass für 10 
+> verschiedene DM-Werte von 1 bis 5 DM die 
+> entsprechenden Euro-Werte errechnet und ausgibt. 
+> Woher können die DM-Werte kommen? 
+> Implementieren Sie zwei verschiedene Möglichkeiten.
+> Welche Datentypen verwenden Sie?
+
+[//]: # (ToDo: nachfragen und fertig machen)
+Code: [aufgabe3-5.c](part3/aufgabe5.c)
+
+## Aufgabe 6
+> Schreiben Sie ein Programm, das für drei 
+> verschiedene Radien zwischen 2 und 3 jeweils 
+> die Oberfläche der Kugel und das Volumen 
+> berechnet und ausgibt. Die Radien können 
+> fest kodiert sein.
+
+Code: [aufgabe3-6.c](part3/aufgabe6.c)
+
+## Aufgabe 7
+> Welche Darstellung haben die folgenden Ausdrücke
+> in C:
+> 
+> `(a + b) / (c − d) − de`
+> 
+> und
+> 
+> `sqrt(3) * (a + b)`
+
+1. `(a + b) / (c - d) - (d * e)`
+2. `sqrt(3) * (a + b)`
+
+## Aufgabe 8
+> Was passiert jeweils bei den folgenden Zeilen.
+> Welche Werte haben jeweils `i`, `k`, `l`. 
+> Erklären Sie.
+> 
+> ```c++
+> int i, k, l;
+> i = 42;
+> 
+> k = i++;
+> l = ++i;
+> ```
+
+Werte am Ende:
+- `i = 44`
+- `k = 42`
+- `l = 44`
+
+Das liegt daran, dass `i++` "post increment" ist und
+daher erst nach dem Benutzen sich um eins erhöht.
+Die andere Variante `++i` ist "pre increment" und
+erhöht die variable bevor sie genutzt wird.
+
+## Aufgabe 9
+> Welchen Sinn machen die folgenden Ausdr ̈ucke:
+> ```c++
+> int a, b, d;
+> a & 0707;
+> b | 0xC;
+> a = a ^ a;
+> b = b << 3;
+> d = d & ~07;
+> ```
+
+Die ersten beiden Zeilen machen keinen Sinn, da
+das Ergebnis nicht genutzt wird. 
+
+Ab hier wird davon ausgegangen, dass a, b und d
+irgendeinen unbekannten Wert haben.
+
+Die Zeile `a = a ^ a`
+macht auch keinen Sinn, da dort immer `0` herauskommen wird.
+Die Zeile `b = b << 3` macht Sinn, denn dort wird `b` 
+um drei Stellen nach links verschoben. In der Zeile
+`d = d & ~07` wird `d` bitweise mit dem invertierten Wert 
+von `07` "und"-verknüpft. 
+
+## Aufgabe 10
+> Für welchen Wert der Integer-Variablen `x`
+> ist der folgende Ausdruck wahr:
+> 
+> `((x >= 10) && (x <= 200)) || (x == 5) && (x==6)`
+
+Der Ausdruck ist für jedes `x` zwischen `10` und `200` `wahr`.
+Die rechte Seite der "oder"-Verknüpfung kann nie `wahr`
+sein.
+
+Wenn `P(x) = ((x >= 10) && (x <= 200)) || (x == 5) && (x==6)`, dann
+gilt `∀x ∈ [10; 200] : P(x)`.
+
+
+## Aufgabe 11
+> Betrachten Sie den folgenden Ausdruck:
+> 
+> `(x < 0) || ((++x > 5) && (x < 7))`
+> 
+> Welchen Wert hat `x` nach Auswertung dieses Ausdrucks, 
+> wenn anfangs `x = -1;` war?
+
+Der "pre increment" wird nie ausgeführt,
+wenn `x = -1`, wegen des "Short-Circuit Evaluation"
+prinzips. Die rechte Seite wird gar nicht mehr 
+ausgeführt, wenn die linke Seite schon `true` ist bei `||`.
+
+Dadurch ist `x` immer noch `-1` am Ende der ausführung.
+
+## Aufgabe 12
+> Welche Werte haben die einzelnen Konstanten 
+> in der folgenden Aufzählung?
+> Ist das immer so? Erklären Sie.
+> 
+> `enum hugo {AA, BB = 3, CC='c', DD};`
+
+Die Elemente in Enumerationen werden immer zu 
+`int` konstanten. In diesem Fall haben sie diese
+Werte:
+- `AA` -> `0`
+- `BB` -> `3`
+- `CC` -> `'c'`
+- `DD` -> `'d'`
+
+Diese Regeln gelten für die Konstanten in 
+Enumerationen:
+1. Explizit gesetzter Wert: Einem Element kann explizit ein Wert zugewiesen werden.
+2. Automatische Zuweisung: Falls kein Wert explizit gesetzt wurde, erhält das erste Element den Wert `0`. Alle nachfolgenden Elemente erhalten den Wert des vorherigen Elements + 1.
+
+## Aufgabe 13
+> Was passiert, wenn Sie eine Variable als `const` 
+> zu deklarieren und dann in Ihrem Programm 
+> verändern? Probieren Sie es aus!
+
+Der Kompilierer gibt einen Fehler, da konstante Variablen
+nicht verändert werden dürfen.
+
+## Aufgabe 14
+> Welche Operatoren kennen Sie, die mit Zeichenketten 
+> arbeiten? Was machenSie z.B., wenn Sie zwei 
+> Zeichenketten aneinander hängen wollen und was,
+> wenn Sie Teile aus einer Zeichenkette verwenden wollen?
+
+Funktionen für Zeichenketten sind in `string.h` definiert.
+Diese bietet z.B.:
+- `strlen(...)`: gibt die Länge einer Zeichenkette ohne `'\0'` zurück
+- `strcat(...)`: Zeichenketten verknüpfen
+- `strncpy(...)`: Teil einer Zeichenkette kopieren
+- `strcmp(...)`: Zeichenketten vergleichen
+
+## Aufgabe 15
+> Ändern Sie das Programm zur Umrechnung von DM in Euro
+> so ab, dass es die umzuwandelnden Werte einliest und
+> nur im Falle eines Wertes größer als 1000DM auch umwandelt.
+> Sie wollen sich doch nicht mit Peanuts abgeben, oder?
+
+Code: [aufgabe3-15.c](part3/aufgabe15.c)
+
+## Aufgabe 16
+> Berechnen Sie für einen eingegebenen Radius (Float)
+> die Oberfläche und das Volumen einer Kugel mit 
+> diesem Radius. Beachten Sie, dass dies nur für
+> positive Radien definiert ist.
+
+Code: [aufgabe3-16.c](part3/aufgabe16.c)
+
+## Aufgabe 17
+> Wie sehen die Fluss-Diagramme f ̈ur die ein-armige 
+> und zwei-armige **if**-Anweisungaus? 
+> Erklären Sie.
+
+[//]: # (ToDo: skipped)
+
+## Aufgabe 18
+> Schreiben Sie ein Programm, das zwei Integer 
+> einliest und dafür das Maximum bestimmt. 
+> Verwenden Sie dafür:
+> 
+> 1. nur die ein-armige If-Anweisung
+> 2. die zwei-armige if-else Anweisung
+
+Code: [aufgabe3-18.c](part3/aufgabe18.c)
+
+## Aufgabe 19
+> Betrachten Sie folgendes Code-Segment:
+> 
+> ```c++
+> if (a > 5)
+>   if (a < 10)
+>       b = c;
+> else
+>   printf("a kleiner 5");
+> ```
+> 
+> Was soll diese Code-Strecke ausdrücken?
+> Was passiert hier tatsächlich?
+> Haben Sie Verbesserungsvorschläge?
+
+Dieser Code soll `b = c` ausführen, wenn `a` zwischen 5 und 10 ist.
+Falls `a` nicht größer als `5` ist dann soll "a kleiner 5"
+ausgegeben werden. Da hier keine geschweiften Klammern
+benutzt wurden, wird dieser Code aber nicht so funktionieren.
+Das `else` gehört hier zum `if (a < 10)`, wodurch dieser ausgeführt
+wird, wenn `a >= 10` ist.
+
+Es ist zu empfehlen **immer** geschweifte Klammern bei
+if/else/for/while etc zu benutzen, auch wenn der code
+innerhalb nur eine Zeile hat. Ansonsten ist es für
+das Auge nicht eindeutig zu sehen was passiert.
+
+## Aufgabe 20
+> Sie wollen einen Wert `a` einsortieren in die 
+> 5er-Intervalle von 5 aufwärts. 
+> Sie codieren dazu:
+> 
+> ```c++
+> if (a > 5) 
+>   printf(">5\n");
+> else if(a > 10)
+>   printf(">10\n");
+> else if(a > 15)
+>   printf(">15\n");
+> else
+>   printf("a kleiner 5\n");
+> ```
+> 
+> Was ist dazu zu sagen?
+> Haben Sie Verbesserungsvorschläge?
+
+Zuerst muss man erwähnen, dass der Code ein logik fehler hat.
+Das liegt an der Reihenfolge der if/else if Anweisungen.
+Z.B. wenn `a = 13` ist, dann wird trotzdem `>5` in der Konsole
+ausgegeben. If Anweisungen werden immer von oben nach unten 
+ausgeführt und da `a > 5` true ist für `a = 13` wird das ausgeführt.
+
+Außerdem ist wieder zu empfehlen geschweifte Klammern zu nutzen.
+Dazu könnte man die Logik des if/else auch mathematisch lösen.
