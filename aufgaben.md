@@ -43,14 +43,14 @@
 > Bringen Sie das „Hallo Welt“-Programm aus der Vorlesung auf Ihrer bevorzugten Plattform zum Laufen. 
 > Skizzieren Sie dabei den Ablauf und vergleichen Sie mit den Schritten, die in der Vorlesung durchgeführt wurden.
 
-Code: [aufgabe1-4.c](part1/aufgabe4.c)
+Code: [part1/aufgabe4.c](part1/aufgabe4.c)
 
 # Übung 2
 
 ## Aufgabe 1
 > Schreiben Sie ein Programm, das Ihren Vor- und Nachnamen sowie Ihr Alter ausgibt.
 
-Code: [aufgabe2-1](part2/aufgabe1.c)
+Code: [part2/aufgabe1.c](part2/aufgabe1.c)
 
 ## Aufgabe 2
 > Was passiert mit dem „Hallo Welt“-Programm, 
@@ -152,7 +152,7 @@ auf der *rechten* "Seite". Das ist in der C syntax so festgeschrieben.
 > 3. zwischen "Hallo" und "Welt" ein Tab Abstand existiert
 > 4. verschiedene fest vorgegebene Zeilen ausgeben kann
 
-Code: [aufgabe2-10.c](part2/aufgabe10.c)
+Code: [part2/aufgabe10.c](part2/aufgabe10.c)
 
 > Was müssten Sie tun, dass das Programm eine Zeile, die der Aufrufer
 > eingibt, auch wieder zurückgeben.
@@ -241,7 +241,7 @@ um mehr Zeichen definieren zu können.
 > }
 > ```
 
-Code: [aufgabe3-2.c](part3/aufgabe2.c)
+Code: [part3/aufgabe2.c](part3/aufgabe2.c)
 
 > Welche Bedeutung hat die Format-Anweisung "5.2f"? 
 > Recherchieren Sie. Gibt es weitere Format-Anweisungen?
@@ -269,7 +269,7 @@ benutzen, um anzugeben, dass der Text 'left aligned' sein soll.
 > Summe als auch das Produkt ausgibt. 
 > Das Gleiche soll auch für float-Zahlen gebaut werden.
 
-Code: [aufgabe3-4.c](part3/aufgabe4.c)
+Code: [part3/aufgabe4.c](part3/aufgabe4.c)
 
 ## Aufgabe 5
 > Schreiben Sie ein Programm, dass für 10 
@@ -280,7 +280,7 @@ Code: [aufgabe3-4.c](part3/aufgabe4.c)
 > Welche Datentypen verwenden Sie?
 
 [//]: # (ToDo: nachfragen und fertig machen)
-Code: [aufgabe3-5.c](part3/aufgabe5.c)
+Code: [part3/aufgabe5.c](part3/aufgabe5.c)
 
 ## Aufgabe 6
 > Schreiben Sie ein Programm, das für drei 
@@ -289,7 +289,7 @@ Code: [aufgabe3-5.c](part3/aufgabe5.c)
 > berechnet und ausgibt. Die Radien können 
 > fest kodiert sein.
 
-Code: [aufgabe3-6.c](part3/aufgabe6.c)
+Code: [part3/aufgabe6.c](part3/aufgabe6.c)
 
 ## Aufgabe 7
 > Welche Darstellung haben die folgenden Ausdrücke
@@ -427,7 +427,7 @@ Diese bietet z.B.:
 > nur im Falle eines Wertes größer als 1000DM auch umwandelt.
 > Sie wollen sich doch nicht mit Peanuts abgeben, oder?
 
-Code: [aufgabe3-15.c](part3/aufgabe15.c)
+Code: [part3/aufgabe15.c](part3/aufgabe15.c)
 
 ## Aufgabe 16
 > Berechnen Sie für einen eingegebenen Radius (Float)
@@ -435,7 +435,7 @@ Code: [aufgabe3-15.c](part3/aufgabe15.c)
 > diesem Radius. Beachten Sie, dass dies nur für
 > positive Radien definiert ist.
 
-Code: [aufgabe3-16.c](part3/aufgabe16.c)
+Code: [part3/aufgabe16.c](part3/aufgabe16.c)
 
 ## Aufgabe 17
 > Wie sehen die Fluss-Diagramme f ̈ur die ein-armige 
@@ -452,7 +452,7 @@ Code: [aufgabe3-16.c](part3/aufgabe16.c)
 > 1. nur die ein-armige If-Anweisung
 > 2. die zwei-armige if-else Anweisung
 
-Code: [aufgabe3-18.c](part3/aufgabe18.c)
+Code: [part3/aufgabe18.c](part3/aufgabe18.c)
 
 ## Aufgabe 19
 > Betrachten Sie folgendes Code-Segment:
@@ -508,3 +508,175 @@ ausgeführt und da `a > 5` true ist für `a = 13` wird das ausgeführt.
 
 Außerdem ist wieder zu empfehlen geschweifte Klammern zu nutzen.
 Dazu könnte man die Logik des if/else auch mathematisch lösen.
+
+# Übung 4
+
+## Aufgabe 1
+> Schreiben Sie ein Programm, das 5 Buchstaben einliest
+> und je nach Buchstaben unterschiedliche Zeichenketten ausgibt.
+> Das Programm soll 3 von Ihnen ausgewählte Zeichen explizit
+> verarbeiten können und den Rest durch einen gemeinsamen,
+> allgemeinen String beantworten.
+> 
+> Verwenden Sie hierfür einmal die if-else Form und dann die
+> switch Anweisung.
+
+Code: [part4/aufgabe1.c](part4/aufgabe1.c)
+
+> Welche ist hier sinnvoller?
+
+In diesem Beispiel bietet sich die switch Anweisung mehr
+an, da hier explizite Werte überprüft werden. Man muss
+jedoch aufpassen kein "fall-through" einzubauen.
+
+## Aufgabe 2
+> Schreiben Sie ein Programm, das einen Integer-Wert 
+> einliest und bei gerader Zahl das Quadrat ausgibt,
+> bei ungerader die Wurzel. Verwenden Sie die 
+> switch-Anweisung. 
+> Das Programm soll nur die Zahlen zwischen 1 und 14
+> akzeptieren. 
+
+Code: [part4/aufgabe2.c](part4/aufgabe2.c)
+
+> Was machen Sie bei einer fehlerhaften Eingabe?
+
+Bei fehlerhaften Eingaben hat man mehrere Möglichkeiten:
+1. Dem Nutzer mitteilen, dass die Eingabe fehlerhaft ist
+2. Dem Nutzer eine neue Eingabe machen lassen
+
+## Aufgabe 3
+> Welche Werte haben `a` und `b` nach dem Durchlauf der folgenden Schleifen.
+> Die Initial-Werte seien `a = 5` und `b = 0`.
+> 
+> ```c++
+> while (a >= b) if(b == 0) a−−;
+> while (a >= b) {
+>   a = a - b;
+>   if (b == 0) b++;
+> }
+> ```
+
+Am Ende ist `a = -1` und `b = 0`. Tatsächlich wird nur
+die erste Schleife ausgeführt.
+
+## Aufgabe 4
+> Schreiben Sie ein Programm, das Zeichen von der 
+> Eingabe liest. Das Programm soll auf die Eingabe 
+> eines "s" und eines "S" sich beenden. 
+> Andere Konsonanten sind als Fehler abzulehnen. 
+> Das letzte eingelesene Zeichen soll jeweils 
+> ausgegeben werden.
+
+Code: [part4/aufgabe4.c](part4/aufgabe4.c)
+
+## Aufgabe 5
+> Schreiben Sie ein Programm, das nur Zahlen von 
+> der Eingabe liest und die Summe ausgibt. 
+> Das Programm soll enden, wenn eine Null eingeben wird.
+
+Code: [part4/aufgabe5.c](part4/aufgabe5.c)
+
+## Aufgabe 6
+> Macht die folgende Code-Strecke einen Sinn und 
+> wenn ja, welchen?
+> 
+> ```c++
+> do {
+>   // do something important
+> } while (0);
+> ```
+
+Der Code macht wenig Sinn, da er **immer** nur einmal 
+läuft. Da kann man das do-while auch direkt weglassen.
+
+## Aufgabe 7
+> Wie sieht das Fluss-Diagramm der for-Schleife aus?
+
+[//]: # (ToDo: skipped)
+
+## Aufgabe 8
+> Was passiert bei folgender for-Schleife?
+> 
+> ```c++
+> for (i = 0; i < 10; i++) i = i - 1;
+> ```
+
+Das ist eine unendliche schleife, da `i` niemals 
+größer als 10 sein wird. Bei jedem Durchlauf erhöht
+sich `i` um eins aber dann wird direkt wieder eins 
+abgezogen.
+
+## Aufgabe 9
+> Schreiben Sie ein Programm, das die Summe der 
+> ersten hundert Integer-Werte ausgibt.
+
+Code: [part4/aufgabe9.c](part4/aufgabe9.c)
+
+## Aufgabe 10
+> Schreiben Sie ein Programm, das den größten 
+> gemeinsamen Teiler (ggT) zweier Integer-Zahlen
+> `u` und `v` berechnet. Verwenden Sie dabei die Tatsache,
+> dass wenn `u` größer als `v` ist, der ggT durch den ggT
+> von `v` und `u`-`v` gegeben ist.
+
+Code: [part4/aufgabe10.c](part4/aufgabe10.c)
+
+## Aufgabe 11
+> Schreiben Sie ein Programm, das die Eulersche 
+> Zahl `e` bis zu einer vorgegebenen Genauigkeit
+> berechnet.
+
+[//]: # (ToDo: Formel falsch in der Aufgabenstellung)
+Code: [part4/aufgabe11.c](part4/aufgabe11.c)
+
+## Aufgabe 12
+> Schreiben Sie ein Programm, das - mittels **getchar()**
+> Zeicehn aus der Eingabe liest und dabei zählt wie viel Ziffern,
+> Zwischenräume und andere Zeichen dabei vorkamen. Dieses
+> Ergebnis soll ausgegeben werden.
+
+Code: [part4/aufgabe12.c](part4/aufgabe12.c)
+
+## Aufgabe 13
+> Was ist der Unterschied zwischen den beiden folgenden Code-Strecken:
+> ```c++
+> for (i = 0; i < 10; i++) {
+>   if (i % 2 == 0) continue;
+>   printf("%d: Hier\n", i);
+> }
+> ```
+> 
+> und 
+> 
+> ```c++
+> for (i = 0; i < 10; i++) {
+>   if (i % 2 == 0) break;
+>   printf("%d: Hier\n", i);
+> }
+> ```
+
+Bei dem Code mit `continue` werden nur ungerade Zahlen
+ausgegeben, bei allen anderen springt das Programm
+in die nächste iteration der Schleife.
+
+Die Variante mit `break` wird direkt bei `i = 0` aus
+der Schleife springen und dadurch nie etwas ausgeben.
+
+## Aufgabe 14
+> Was geschieht bei folgender Code-Strecke:
+> ```c++
+> for (i = 0; i < 10; i++) {
+>   switch (i) {
+>       case 1: case 2: case 3: continue;
+>       case 4: break;
+>       default: break;
+>   }
+>   printf("%d: neuer Durchlauf\n", i);
+> }
+> ```
+
+Dieser Code wird bei `i = 4` bis `i = 9` und `i = 0`
+die Zeile "i: neuer Durchlauf" ausgeben. Das liegt 
+daran, dass `continue` sich auf die while-Schleife 
+bezieht, aber `break` sich auf das switch bezieht.
