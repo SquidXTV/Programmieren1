@@ -680,3 +680,139 @@ Dieser Code wird bei `i = 4` bis `i = 9` und `i = 0`
 die Zeile "i: neuer Durchlauf" ausgeben. Das liegt 
 daran, dass `continue` sich auf die while-Schleife 
 bezieht, aber `break` sich auf das switch bezieht.
+
+# Übung 5
+
+[//]: # (ToDo: skipped, contains answers in pdf already)
+
+# Übung 6
+
+## Aufgabe 1
+> Erst Datentypen geben den "rohen" Bitfolgen im 
+> Hauptspeicher des Rechners eine Bedeutung. 
+> Was ergibt z.B. die Bitfolge `100001`, wenn man 
+> sie als Integer bzw. als Zeichen interpretiert?
+
+Als Integer ist `100001` die Zahl `33` und als
+Zeichen interpretiert ist das `'!'` in der ASCII-Tabelle.
+
+## Aufgabe 2
+> Welche Aktionen muss der Compiler für die folgenden 
+> Operationen durchführen?
+> 
+> ```c++
+> int i;
+> long l;
+> float f;
+> double d;
+> 
+> char c;
+> 
+> i += l;
+> l += i;
+> 
+> l = i * f;
+> f = l * f;
+> 
+> d = f * d;
+> c = i;
+> i = c;
+> ```
+
+In den Operationen muss der Compiler Konvertierungen 
+zwischen den Typen hinzufügen.
+
+## Aufgabe 3
+> Warum kann ein Einsatz von `typedef` sinnvoll sein?
+
+Der Einsatz von `typedef` kann für verbesserte Lesbarkeit 
+und verkürzte Typdefinitionen sorgen, indem lange Typen unter
+einem Namen zusammengefasst werden und dann im Code verwendet
+wird.
+
+Beispiel:
+```c++
+typedef struct {
+    int x;
+    int y;
+} Point;
+
+Point p = {10, 10};
+```
+
+vs
+
+```c++
+struct Point {
+    int x;
+    int y;
+};
+
+struct Point p = {10, 10};
+```
+
+## Aufgabe 4
+> Deklarieren Sie die folgenden Felder:
+> 1. ein Feld von 10 Integern
+> 2. ein Feld von 20 Charactern
+> 3. ein Feld von 6 Feldern aus je 4 Integer-Elementen
+> 
+> und greifen Sie auf jedes fünfte der 
+> vorhandenen Elemente zu.
+
+Code: [part6/aufgabe4.c](part6/aufgabe4.c)
+
+## Aufgabe 5
+> Erklären Sie mit eigenen Worten zeilenweise das Verhalten des Programms
+> ```c++
+> #include <stdio.h>
+> 
+> int main() {
+>   char in[10] = "Hallo Welt";
+> 
+>   printf("%s\n", in);
+>   
+>   return 0;
+> }
+> ```
+
+1. `#include <stdio.h>` header hinzu um `printf` nutzen zu können
+2. `int main() { ... }` ist die main funktion
+3. `char in[10] = "Hallo Welt"` erstellt ein *string* und speichert ihn in einem char array
+4. `printf("%s\n", in)` gibt den *string* aus
+5. `return 0` beendet das Programm mit exit-code `0`
+
+## Aufgabe 6
+> Wieso wird zwischen dem Zeichen ’c’ und der Zeichenkette "c" unterschieden?
+> Erklären Sie damit die Äquivalenz, die in der Vorlesung behauptet wurde:
+> 
+> ```c++
+> char astr[] = "Hallo\n";
+> char bstr[] = {'H', 'a', 'l', 'l', 'o', '\n', '\0'};
+> ```
+
+In C werden Texte als char-arrays erstellt. Eine
+verkürzte Schreibweise dafür ist `"..."`, welche auch
+automatisch `\0` am Ende hinzufügt. Dieses "Zeichen"
+wird genutzt, um das Ende eines Strings anzuzeigen.
+
+## Aufgabe 7
+> Das Skalarprodukt zweier Vektoren x und y des R^n kann
+> in Komponenten-Schreibweise geschrieben werden als:
+> 
+> Siehe PDF
+> 
+> Schreiben Sie ein Programm, dass für zwei Vektoren des
+> R^11 das Skalarprodukt berechnet. Verwenden Sie dazu
+> Felder und eine Berechnungsfunktion.
+
+Code: [part6/aufgabe7.c](part6/aufgabe7.c)
+
+## Aufgabe 8
+> Schreiben Sie ein Programm, dass aus einer Reihe von
+> Zahlen (integer oder float) die Größte heraussucht. 
+> Verwenden Sie dazu ein Feld gegebener Größe, das die
+> Zahlen speichert und eine Funktion, in der die 
+> Bestimmung stattfindet.
+
+Code: []()

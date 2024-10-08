@@ -3,4 +3,4 @@ project(tasks C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(tasks main.c)
+add_executable(tasks part6/aufgabe7.c)
