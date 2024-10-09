@@ -1,7 +1,7 @@
 # Aufgaben Schleifen und Bedingungen
 
 ### A
-Bitte programmieren Sie Aufgabe 11 aus dem Aufgabenzettel
+Bitte programmieren Sie Aufgabe 4.11 aus dem [Aufgabenzettel](../../Aufgaben/Aufgaben.pdf).
 
 [Lösung](A.c)
 
