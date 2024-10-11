@@ -51,3 +51,16 @@ oo+oo
 Schreiben Sie ein Programm, das für die Buchstaben A bis Z auf dem Bildschirm ausgibt. Wenn es ein Vokal ist, schreiben die den Buchstaben bitte groß, andernfalls bitte klein.
 
 [Lösung](D.c)
+
+### E
+Schreiben Sie ein Programm, dass eine feste aber beliebige Zahl in Binärform ausgibt;
+z.B.
+Zahl=12345
+Binär=11000000111001
+
+[Lösung](E.c)
+
+### F
+Geben Sie die Zeichen der ASCII Tabelle aus, begrenzen Sie die Anzahl er Zeichen pro Zeile auf 16
+
+[Lösung](F.c)
