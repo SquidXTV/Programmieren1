@@ -1,8 +1,9 @@
 #include <stdio.h>
 
-long double e(int limit) {
-    unsigned long long int factorial = 1;
-    long double sum = 1;
+long double e(const int limit) {
+    long double factorial = 1.0L;
+    long double sum = 1.0L;
+
     for (int i = 1; i <= limit; i++) {
         factorial *= i;
         sum += (1.0L / factorial);
@@ -12,6 +13,6 @@ long double e(int limit) {
 }
 
 int main() {
-    printf("e = %Lf", e(65));
-  return 0;
+    printf("e = %Lf", e(1754));
+    return 0;
 }
