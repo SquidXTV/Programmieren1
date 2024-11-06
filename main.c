@@ -1,31 +1,36 @@
 #include <stdio.h>
 
-void strPrint(char str[]) {
+void strPrint(const char *str) {
     printf("%s\n", str);
 }
 
-int strLen(char str[]) {
+int strLen(const char *str) {
     int i = 0;
-    while (str[i] != '\0') {
+    while (*(str++) != '\0') {
         i++;
     }
     return i;
 }
 
-void strRevert(char str[]) {
-    int length = strLen(str);
+void strRevert(char *str) {
+    const int length = strLen(str);
+    char *end = str + length - 1;
+
     for (int i = 0; i < length / 2; ++i) {
-        char temp = str[i];
-        str[i] = str[length - 1 - i];
-        str[length - 1 - i] = temp;
+        char temp = *str;
+        *str = *end;
+        *end = temp;
+
+        str++;
+        end--;
     }
 }
 
-int strCountVocals(char str[]) {
+int strCountVocals(const char *str) {
     int count = 0;
-    int i = 0;
-    while (str[i] != '\0') {
-        switch (str[i]) {
+    char c;
+    while ((c = *str++) != '\0') {
+        switch (c) {
             case 'a':
             case 'e':
             case 'i':
@@ -38,55 +43,97 @@ int strCountVocals(char str[]) {
             case 'U':
                 count++;
         }
-        i++;
+    }
+    return count;
+}
+
+void swapCases(char *str) {
+    char c;
+    while ((c = *str) != '\0') {
+        if (c >= 'A' && c <= 'Z') {
+            *str = c + 32;
+        } else if (c >= 'a' && c <= 'z') {
+            *str = c - 32;
+        }
+
+        str++;
+    }
+}
+
+void concat(const char *s1, const char *s2, char *target) {
+    char c;
+    while ((c = *s1++) != '\0') {
+        *target++ = c;
+    }
+
+    while ((c = *s2++) != '\0') {
+        *target++ = c;
+    }
+
+    *target = '\0';
+}
+
+int countSubstring(char *input, char *substring) {
+    int count = 0;
+
+    while (*input != '\0') {
+        int add = 1;
+
+        char *current = input;
+        char *substringCurrent = substring;
+        while (*substringCurrent != '\0') {
+            if (*current == '\0' || *current != *substringCurrent) {
+                add = 0;
+                break;
+            }
+
+            current++;
+            substringCurrent++;
+        }
+
+        count += add;
+        input++;
     }
 
     return count;
 }
 
-void strSwapCases(char str[]) {
-    int i = 0;
-    while (str[i] != '\0') {
-        char c = str[i];
-        if (c >= 'A' && c <= 'Z') {
-            printf("%c", c + 32);
-        } else if (c >= 'a' && c <= 'z') {
-            printf("%c", c - 32);
-        } else {
-            printf("%c", c);
+int countSubstringReversed(char *input, char *substring) {
+    int count = 0;
+    const char *first = input;
+
+    while (*input != '\0') {
+        int add = 1;
+
+        char *current = input;
+        char *substringCurrent = substring;
+        while (*substringCurrent != '\0') {
+            if (*current != *substringCurrent || (current == first && *(substringCurrent + 1) != '\0')) {
+                add = 0;
+                break;
+            }
+
+            current--;
+            substringCurrent++;
         }
-        i++;
-    }
-    printf("\n");
-}
 
-void strConcat(char str1[], char str2[], char str3[]) {
-    int i = 0;
-    while (str1[i] != '\0') {
-        str3[i] = str1[i];
-        i++;
+        count += add;
+        input++;
     }
 
-    int j = 0;
-    while (str2[j] != '\0') {
-        str3[i] = str2[j];
-        i++;
-        j++;
-    }
-
-    str3[i] = '\0';
+    return count;
 }
 
 int main(void) {
-    strPrint("hello");
-    printf("Length: %d\n", strLen("hello"));
-    char test[] = "Hello";
-    strRevert(test);
-    printf("%s\n", test);
-    printf("Number of vocals: %d\n", strCountVocals("hello"));
-    strSwapCases("heLLo");
-    char storage[11];
-    strConcat("Hello", "World", storage);
-    printf("%s\n", storage);
+    char *input = "HaLLoLLooLo";
+    char substrings[4][4] = {"LL", "Lo", "LLo", "LoL"};
+    printf("Input: %s\n", input);
+    for (int i = 0; i < 4; ++i) {
+        printf("Substring[%d]: %s found %d times.\n", i, substrings[i], countSubstring(input, substrings[i]));
+    }
+
+    input = "HaLLoLLoLLLooo";
+    char substring[] = "oLL";
+    printf("Substring reversed: %s found %d times.\n", substring, countSubstringReversed(input, substring));
     return 0;
 }
